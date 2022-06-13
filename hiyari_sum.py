@@ -2,6 +2,8 @@ import openpyxl as px
 from openpyxl.styles import PatternFill
 import glob
 import tkinter as tk
+from datetime import datetime
+
 
 fill1 = PatternFill(patternType="solid", fgColor="C5D9F1")
 fill2 = PatternFill(patternType="solid", fgColor="FDE9D9")
@@ -63,8 +65,9 @@ def hiyari():
 
     for m in range(16, 18):
         ws1.cell(row=1, column=m).fill = fill2
+    date1 = datetime.today()
 
-    wb1.save('hiyari02/summary.xlsx')
+    wb1.save('hiyari02/summary'+str(date1.year)+str(date1.month)+'.xlsx')
     statusbar["text"] = "Done"
 
 
